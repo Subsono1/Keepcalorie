@@ -24,7 +24,7 @@
 
 ### Overview
 
-_**Keepalorie** is a project where people can track their daily calories. Users can enter their calories intake, update and  delete so they can keep records of it. Is a way to help people who want to lose weight or simply to track their calories. Moreover, they can add additional comments as well to compare others.  
+**Keepalorie** is a project where people can track their daily calories. Users can enter their calories intake, update and  delete so they can keep records of it. Is a way to help people who want to lose weight or simply to track their calories. Moreover, they can add additional comments as well to compare others.  
 the site will offer a calorie calculator as an external resource, where users can reference by putting their information and to find out how many calories should be intaking daily based on their personal body information
 
 
@@ -60,17 +60,17 @@ the site will offer a calorie calculator as an external resource, where users ca
 
 Keepcalorie will offer a way to keep track of your daily calories intake. leave messages and compare it to others
 
--Will design mobile first.
--Will have a new log entry window.
--Will have a logged entries. Page will render all the information from user's information
--will Have in total a create, delete and update system.
--will have a calorie calculator section(need to get apporval, is an external widget calculator.)
+- Will design mobile first.
+- Will have a new log entry window.
+- Will have a logged entries. Page will render all the information from user's information
+- will Have in total a create, delete and update system.
+- will have a calorie calculator section(need to get apporval, is an external widget calculator.)
 <br>
 
 #### Goals
 
--Create logs for calories intake and compare to others. 
--Put comments to track the calories intake.
+- Create logs for calories intake and compare to others. 
+- Put comments to track the calories intake.
 
 <br>
 
@@ -103,18 +103,19 @@ Keepcalorie will offer a way to keep track of your daily calories intake. leave 
 ```
 src
 |__ assets/
-      |__ data-tests
+      
       |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
+      |__ Social Media Meta Tags
 |__ components/
-      |__ Header.jsx
-      |__ Hero.jsx
-      |__ Ipsum.jsx
-      |__ Lorem.jsx
-      |__ CTA.jsx
-      |__ Footer.jsx
+      |__ App.js
+      |__ CreateEntry.js
+      |__ List.js
+      |__ Dashboard.js
+      |__ Nav.js
+      |__ Update.js
+      |__ Calculator.js
+      |__ Footer.js
+      
 ```
 
 <br>
@@ -151,7 +152,8 @@ src
 | Responsive Design   |    H     |     4 hrs      |     TBD       |     TBD     |
 | Basic Css Design    |    H     |     3 hrs      |     TBD       |     TBD     |
 | Advance Css Design  |    H     |     6 hrs      |     TBD       |     TBD     |
-| TOTAL               |          |     33 hrs      |     TBD       |     TBD     |
+| Calculator(upon approval)| L   |      3hrs      |     TBD       |     TBD     |
+| TOTAL               |          |     36 hrs     |     TBD       |     TBD     |
 
 <br>
 
@@ -169,9 +171,9 @@ src
 
 
 
--Try to keep a local database for different users.
--Would like to find a way where users can have a food recomendation.
--a blog where people can discuss things related to food and calories. 
+- Try to keep a local database for different users.
+- Would like to find a way where users can have a food recomendation.
+- a blog where people can discuss things related to food and calories. 
 
 <br>
 
