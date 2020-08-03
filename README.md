@@ -24,8 +24,8 @@
 
 ### Overview
 
-**Keepalorie** is a project where people can track their daily calories. Users can enter their calories intake, update and  delete so they can keep records of it. Is a way to help people who want to lose weight or simply to track their calories. Moreover, they can add additional comments as well to compare others.  
-the site will offer a calorie calculator as an external resource, where users can reference by putting their information and to find out how many calories should be intaking daily based on their personal body information
+**Keepalorie** is a project where people can track their daily calories. Users can enter their calories intake, update and  delete so they can keep records of it. Is a way to help people who want to lose weight or simply track their calories. Moreover, they can add additional comments as well to compare to others.  
+The site will offer a calorie calculator as an external resource, where users can reference by putting their information and to find out how many calories they should be intaking daily, based on their personal body information.
 
 
 <br>
