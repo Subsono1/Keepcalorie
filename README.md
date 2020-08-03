@@ -26,7 +26,9 @@
 
 ### Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_**Keepalorie** is a project where people can track their daily calories. Users can enter their calories intake, update and  delete so they can keep records of it. Is a way to help people who want to lose weight or simply to track their calories. Moreover, they can add additional comments as well. 
+the site will offer a calorie calculator as an external resource, where users can reference by putting their information and to find out how many calories should be intaking daily based on their personal body information
+
 
 <br>
 
@@ -62,7 +64,7 @@ _**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum ri
 
 ### MVP
 
-> The Minimum Viable Product should be a well-planned and easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
+> Project will offer a 
 
 _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
 
@@ -96,7 +98,7 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 |    API     | Quality Docs? | Website       | Sample Query                            |
 | :--------: | :-----------: | :------------ | :-------------------------------------- |
-| WeatherAPI |      yes      | _example.com_ | _example.com/mickeymouse?s=movies&t=10_ |
+| AirtableAPI|      yes      | _Airtable.com_| _https://api.airtable.com/v0/appqG49RP2ePZYJQq/Table%201_ |
 
 <br>
 
@@ -129,11 +131,13 @@ src
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo._               |
+|  Header      | functional |   n   |   n   | _The header will contain the navigation and logo._               |
 |  Navigation  | functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
-|   Gallery    |   class    |   y   |   n   | _The gallery will render the posts using cards in flexbox._      |
-| Gallery Card | functional |   n   |   y   | _The cards will render the post info via props._                 |
-|    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|  Home        | functional |       |       | _The home will have the intro plus an enter site button.-        |      
+|  Dashboard   | functional |   y   |   n   | _The dashboard will hold the logs, each entry._                  |
+|  Entry       | functional |   y   |   y   | _This is where all the entry from airtable will render._         |
+|  Calculator  | functional |   n   |   n   | _This will hold a calculator widget for calories recommended._   |
+|  Footer      | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
 
 <br>
 
