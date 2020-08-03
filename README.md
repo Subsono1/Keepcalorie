@@ -36,21 +36,19 @@ the site will offer a calorie calculator as an external resource, where users ca
 
 > Use the Wireframes section to display desktop, tablet and mobile views.
 
-![Dummy Link](url)
+[](https://imgur.com/a/JwdgZKX)
 
 - Desktop Landing
 
-![Dummy Link](url)
+[](https://imgur.com/qy7yE8q)
 
-- Desktop Body
+- Second Page desktop
 
-![Dummy Link](url)
+[](https://imgur.com/iqYOADP)
 
-- Desktop Resource Index
+- Third page desktop
 
-![Dummy Link](url)
 
-- Desktop Resource Show
 
 ![Dummy Link](url)
 
