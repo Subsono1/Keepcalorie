@@ -1,0 +1,41 @@
+.new-entry-headline {
+  display: felx;
+  text-align: right;
+  width: 300px;
+  padding: 40px;
+}
+
+.new-entry-div {
+  
+
+width: 500px;
+/* height: 300px; */
+margin: 0 auto;
+  
+}
+
+
+.new-entry-box {
+  box-shadow: 5px 10px 60px grey;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+ input, textarea {
+  border-radius: 8px;
+  width: 400px;
+  height: 45px;
+  text-align: center;
+}
+
+textarea {
+  height: 65px;
+}
+:placeholder-shown {
+  text-align: center;
+}
+
