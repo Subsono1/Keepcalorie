@@ -9,7 +9,7 @@ export default function Nav() {
         
         <Link to="/" className="brand">Keepcalorie</Link>
         <Link to="/entries" >Entries</Link>
-        <Link to="/calculator">Resources</Link>
+        <Link to="/resources">Resources</Link>
       </nav>
       
   </header>
