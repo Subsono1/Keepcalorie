@@ -1,36 +1,33 @@
 import React, { useState } from "react";
+import axios from "axios";
+
+//style packages installed with npm
 import styled, { keyframes } from "styled-components";
 import { fadeInDown } from "react-animations";
-import axios from "axios";
-import DeleteIcon from '@material-ui/icons/Delete';
-// import { AccessAlarm, ThreeDRotation } from '@material-ui/icons'
-// import { IconButton } from 'material-ui'
-// import { Delete } from 'material-design-icons'
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const BASE_URL = "https://api.airtable.com/v0/appbIJiGm110d5tbK/Table%201";
 
+//animation var...
 const fadeInDownAnimation = keyframes`${fadeInDown}`;
 const FadeSection = styled.section`
   animation: 2s ${fadeInDownAnimation};
 `;
 
 export default function List(props) {
-  
-
   const { fields, id } = props.entry;
 
+  //delete Api function with axios
   const handleDelete = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const response = await axios.delete(`${BASE_URL}/${id}`, {
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         "Content-Type": "application/json",
       },
-    })
-    props.updateFetchEntries(!props.fetchEntries)
-   
-
-  }
+    });
+    props.updateFetchEntries(!props.fetchEntries);
+  };
 
   return (
     <div className="list">
@@ -47,7 +44,11 @@ export default function List(props) {
           {fields.Comments}
         </h3>
         <h1 className="total">Total daily calories: {fields.Total}</h1>
-        <DeleteIcon className="delete"fontSize='large' onClick={handleDelete}></DeleteIcon >
+        <DeleteIcon
+          className="delete"
+          fontSize="large"
+          onClick={handleDelete}
+        ></DeleteIcon>
       </FadeSection>
     </div>
   );

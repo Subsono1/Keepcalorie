@@ -39,6 +39,7 @@ margin: 0 auto;
   background-color: rgb(165, 250, 239);
   opacity: .5;
   font-size: 20px;
+  outline: none;
   
 }
 label {

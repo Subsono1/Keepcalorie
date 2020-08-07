@@ -2,93 +2,97 @@ header {
   width: 100vw;
   margin: 0;
   padding: 0;
-  background-color: rgb(45, 195, 206);
+  background: rgb(37, 159, 240);
 }
 nav {
   width: 100vw;
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   justify-content: flex-end;
-  
-
 }
 
-
-.link, .brand {
-  font-family: 'Fredericka the Great', cursive;
+.link,
+.brand {
+  font-family: "Fredericka the Great", cursive;
   font-size: 20px;
   font-weight: bold;
   margin: 20px 10px;
   padding: 10px;
   text-decoration: none;
-  color: rgb(243, 248, 229);
+  color: rgb(207, 136, 12);
   cursor: pointer;
-  background-color: rgb(13, 93, 168);
+  background-color: rgb(244, 248, 248);
   border-radius: 10px;
-  
 }
 
 .brand {
-  font-family: 'Orbitron', sans-serif;
+  color: rgb(242, 251, 251);
+  font-family: "Orbitron", sans-serif;
   font-size: 20px;
   margin-right: auto;
   background: rgb(200, 89, 14);
-  box-shadow: 10px 5px 4px  rgb(233, 212, 212);
+  box-shadow: 10px 5px 4px rgb(233, 212, 212);
 }
 
 .link:hover,
 .link:active {
   color: rgb(34, 37, 37);
   background: azure;
-
-  
 }
 
 .start-div {
-  background: url("https://images.unsplash.com/photo-1444459094717-a39f1e3e0903?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80") no-repeat center fixed;
-  background-size: cover ;
+  background: url("https://images.unsplash.com/photo-1444459094717-a39f1e3e0903?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80")
+    no-repeat center fixed;
+  background-size: cover;
   height: 95vh;
 }
 .start {
-  /* display: flex;
-  justify-content: center; 
-  align-items: center;
-  flex-direction: row; */
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
   margin-top: 500px;
   text-decoration: none;
   border-radius: 50%;
   text-align: center;
   height: 200px;
   width: 200px;
-  
+  box-shadow: 5px 4px 30px aliceblue, 3px 5px 60px white;
+
   margin: 0 auto;
   margin-top: 400px;
-  background: yellowgreen;
+  background: rgb(190, 80, 16);
   position: relative;
-
-  
-
+  cursor: pointer;
+  outline: none;
 }
 
+.start:hover {
+  background-color: rgb(37, 159, 240);
+  color: aliceblue;
+}
 
 .new-entry-headline {
   color: gray;
 }
 
 footer {
-  background: white;
+  background: rgb(37, 159, 240);
+
   list-style: none;
+  width: 100vw;
+  margin-top: 50px;
+  padding-top: 30px;
+  padding-bottom: 3px;
+  position: fixed;
+
 }
 li {
   text-decoration: none;
   list-style: none;
-}
-.footer-link {
-  list-style: none;
-  width: 100px;
-  height: 100px;
+  text-align: center;
+  padding-right: 20px;
 }
 
+
 @media screen and (min-width: 700px) {
-  
 }

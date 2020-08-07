@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch, Router } from "react-router-dom";
 import axios from "axios";
-import Nav from "./components/Nav"
-import Start from './components/Start'
-import CreateEntry from "./components/CreateEntry"
-import Entries from './components/Entries'
-import Resources from "./components/Resources"
-import Footer from './components/Footer'
-import "./CreateEntry.css"
-import './List.css'
-import "./Resources.css"
+import Nav from "./components/Nav";
+import Start from "./components/Start";
+import CreateEntry from "./components/CreateEntry";
+import Entries from "./components/Entries";
+import Resources from "./components/Resources";
+import Footer from "./components/Footer";
+import "./CreateEntry.css";
+import "./List.css";
+import "./Resources.css";
 
 import "./App.css";
 
 function App() {
-  const [entries, updateEntries] = useState([])
-  const [fetchEntries, updateFetchEntries] = useState (false)
-  const BASE_URL =
-    "https://api.airtable.com/v0/appbIJiGm110d5tbK/Table%201";
+  const [entries, updateEntries] = useState([]);
+  const [fetchEntries, updateFetchEntries] = useState(false);
+  const BASE_URL = "https://api.airtable.com/v0/appbIJiGm110d5tbK/Table%201";
 
   useEffect(() => {
+    // API call function from airtable
     const getCalorieRecords = async () => {
       const response = await axios.get(BASE_URL, {
         headers: {
@@ -27,9 +27,9 @@ function App() {
         },
       });
       console.log(response.data);
-      updateEntries(response.data.records)
+      updateEntries(response.data.records);
     };
-    
+
     getCalorieRecords();
   }, [fetchEntries]);
 
@@ -42,36 +42,25 @@ function App() {
         </Route>
         <Route exact path="/form">
           <CreateEntry
-           fetchEntries={fetchEntries}
-           updateFetchEntries={updateFetchEntries}/>
-
+            fetchEntries={fetchEntries}
+            updateFetchEntries={updateFetchEntries}
+          />
         </Route>
         <Route path="/entries">
           <Entries
             calorieEntries={entries}
             fetchEntries={fetchEntries}
-           updateFetchEntries={updateFetchEntries}
-            
-            />
+            updateFetchEntries={updateFetchEntries}
+          />
         </Route>
 
         <Route path="/resources">
           <Resources />
         </Route>
-        
-
-
       </Switch>
       <Footer />
-
-
-
-
     </div>
-
-
-
-  )
+  );
 }
 
 export default App;

@@ -11,7 +11,7 @@ const FlashButton = styled.button`
 
 export default function Start() {
 
-
+// to direct the button to another path!
 const history = useHistory()
   function handleSubmit() {
    history.push('/form')
