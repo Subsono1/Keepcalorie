@@ -63,7 +63,7 @@ Keepcalorie will offer a way to keep track of your daily calories intake. leave 
 - Will design mobile first.
 - Will have a new log entry window.
 - Will have a logged entries. Page will render all the information from user's information
-- will Have in total a create, delete and update system.
+- will Have in total a create, delete.
 - will have a calorie calculator section(need to get apporval, is an external widget calculator.)
 <br>
 
@@ -82,6 +82,12 @@ Keepcalorie will offer a way to keep track of your daily calories intake. leave 
 |   React Router   | Paths for components to rout them.         |
 |   Axios          | get, post, update and delete from API.     |
 |   LINK           | To link to different components.           |
+|   @aterial-ui    | To create buttons and icons in components. |
+|   react-animations | To create different animations with react|
+|   react-iframe   | To set up iframe tag with rect|
+|   styled-components | To style components with react |
+
+
 
 
 <br>
@@ -104,16 +110,16 @@ Keepcalorie will offer a way to keep track of your daily calories intake. leave 
 src
 |__ assets/
       
-      |__ fonts
+      |__ Fonts
       |__ Social Media Meta Tags
 |__ components/
       |__ App.js
       |__ CreateEntry.js
+      |__ Entries.js
       |__ List.js
-      |__ Dashboard.js
       |__ Nav.js
-      |__ Update.js
-      |__ Calculator.js
+      |__ Resources.js
+      |__ Start.js
       |__ Footer.js
       
 ```
@@ -128,12 +134,12 @@ src
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
 |  App.        | functional |   n   |   n   |  Main component, app brain.                                      |
 |  Navigation  | functional |   n   |   n   |  The navigation will provide a link to each of the pages.        |
-|  Home/Form.  | functional |  y  |   y   |  The home will have the intro plus an enter site button.         |      
-|  Dashboard   | functional |   y   |   n   |  The dashboard will hold the logs, each entry.                   |
-|  Eentries    | functional |   y   |   y   |  This is where all the entry from airtable will render.          |
-|  update      | functional |   y   |   y   |  This is where all the entry will be update it from airtable.    |
-|  Calculator  | functional |   n   |   n   |  This will hold a calculator widget for calories recommended.    |
-|  Footer      | functional |   n   |   n   |  The footer will show info about me and a link to my portfolio.  |
+|  CreateEntry  | functional |  y  |   y   |  The create will have the form plus a nav.         |      
+|  List  | functional |   y   |   n   |  The List will hold the logs, each entry.                   |
+|  Entries    | functional |   y   |   y   |  This is where all the entry from airtable will render.          |
+|  Resources      | functional |   y   |   y   |  This is where the nutrition search engine and the calorie calculator are set   |
+|  Start | functional |   n   |   n   |  This is the intro to the site, with a button to enter the site.    |
+|  Footer      | functional |   n   |   n   |  The footer will show info about me.  |
 
 <br>
 
@@ -144,16 +150,16 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Nav.            |    L     |     3 hrs      |     TBD       |     TBD     |
-| Create Home/Form.   |    H     |     4 hrs      |     TBD       |     TBD     |
-| Create Dashboard.   |    L     |     4 hrs      |     TBD       |     TBD     |
-| Create Entries.     |    H     |     4 hrs      |     TBD       |     TBD     |
-| Create CRUD Actions |    H     |     5 hrs      |     TBD       |     TBD     |
-| Responsive Design   |    H     |     4 hrs      |     TBD       |     TBD     |
-| Basic Css Design    |    H     |     3 hrs      |     TBD       |     TBD     |
-| Advance Css Design  |    H     |     6 hrs      |     TBD       |     TBD     |
-| Calculator(upon approval)| L   |      3hrs      |     TBD       |     TBD     |
-| TOTAL               |          |     36 hrs     |     TBD       |     TBD     |
+| Add Nav.            |    L     |     3 hrs      |     2.5 hrs       |     2.5 hrs    |
+| Create Home/Form.   |    H     |     4 hrs      |     4 hrs       |     4 hrs     |
+| Create List.   |    L     |     4 hrs      |     6 hrs       |     6 hrs     |
+| Create Entries.     |    H     |     4 hrs      |     6 hrs      |     6 hrs     |
+| Create CRUD Actions |    H     |     5 hrs      |     6 hrs       |     6 hrs    |
+| Responsive Design   |    H     |     4 hrs      |     3.5 hrs      |    3.5 hrs     |
+| Basic Css Design    |    H     |     3 hrs      |     4 hrs      |     4 hrs     |
+| Advance Css Design  |    H     |     6 hrs      |     5 hrs       |      5 hrs     |
+| Resources| L   |      3 hrs      |     3 hrs      |     5 hrs     |
+| TOTAL               |          |     36 hrs     |     42 hrs      |     42 hrs    |
 
 <br>
 
@@ -173,7 +179,8 @@ src
 
 - Try to keep a local database for different users.
 - Would like to find a way where users can have a food recomendation.
-- a blog where people can discuss things related to food and calories. 
+- a blog where people can discuss things related to food and calories.
+- search for different nutritions  
 
 <br>
 
@@ -183,7 +190,55 @@ src
 
 ### Code Showcase
 
-> tbd
+> ```export default function CreateEntry(props) {
+  const [Date, updateDate] = useState("");
+  const [Breakfast, updateBreakfast] = useState("");
+  const [Lunch, updateLunch] = useState("");
+  const [Snack, updateSnack] = useState("");
+  const [Dinner, updateDinner] = useState("");
+  const [Comments, updateComments] = useState("");
+
+//API call function to post
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+ 
+    const response = await axios.post(
+      BASE_URL,
+      {
+        fields: {
+          Date: Date,
+          Breakfast: parseInt(Breakfast),
+          Lunch: parseInt(Lunch),
+          Snack: parseInt(Snack),
+          Dinner: parseInt(Dinner),
+          Comments: Comments,
+        },
+      },
+
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          "Content-Type": "application/json",
+        },
+      }
+    ); //to make the call again.
+    props.updateFetchEntries(!props.fetchEntries);
+    updateDate("");
+    updateBreakfast("");
+    updateLunch("");
+    updateSnack("");
+    updateDinner("");
+    updateComments("");
+  };
+ 
+  
+
+  return (
+  
+    <>
+      <FadeDiv className="new-entry-headline">
+      ```
 
 ### Code Issues & Resolutions
 
