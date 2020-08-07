@@ -1,9 +1,16 @@
+body {
+  text-align: center;
+}
+
+
 .list {
   display: inline-grid;
-  width: 250px;
+  width: 400px;
+  ;
   padding: 20px;
-  border: 1px solid green;
- margin: 0 auto;
+  
+  
+  
 
   
   
@@ -14,5 +21,15 @@
 }
 
 .entries {
-  /* text-align: center; */
+  background: rgb(104, 89, 110);
+  color: white;
+  border: 1px solid green;
+  padding: 20px;
+  text-align: left;
+  border-radius: 20px;
+  font-size: 14px;
+  
 }
+ body {
+   background-color: rgb(232, 237, 243);
+ }

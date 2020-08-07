@@ -7,9 +7,9 @@ export default function Nav() {
     <header>
       <nav>
         
-        <Link to="/" className="brand">Keepcalorie</Link>
-        <Link to="/entries" >Entries</Link>
-        <Link to="/resources">Resources</Link>
+        <Link to="/form" className="brand">Keepcalorie</Link>
+        <Link to="/entries" className="entries-link">Entries</Link>
+        <Link to="/resources"className="resources-link">Resources</Link>
       </nav>
       
   </header>

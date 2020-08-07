@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
+import styled, { keyframes } from 'styled-components'
+import { fadeInLeft, zoomIn } from 'react-animations'
 import { Link } from "react-router-dom";
 
 const BASE_URL = "https://api.airtable.com/v0/appbIJiGm110d5tbK/Table%201";
+
+const fadeInLeftAnimation = keyframes`${fadeInLeft}`
+const FadeDiv = styled.section`
+animation:2s ${fadeInLeftAnimation}`
+
+const zoomInAnimation = keyframes`${zoomIn}`
+const EntryDiv = styled.section`
+animation:2s ${zoomInAnimation}`
 
 export default function CreateEntry(props) {
   const [Date, updateDate] = useState("");
@@ -10,20 +20,24 @@ export default function CreateEntry(props) {
   const [Lunch, updateLunch] = useState("");
   const [Snack, updateSnack] = useState("");
   const [Dinner, updateDinner] = useState("");
-  const [Comment, updateComment] = useState("");
+  const [Comments, updateComments] = useState("");
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // try {
     const response = await axios.post(
       BASE_URL,
       {
         fields: {
-          Date: "",
-          Breakfast: "",
-          Lunch: "",
-          Snack: "",
-          Dinner: "",
-          Comments: "",
+      Date: Date,
+      Breakfast: parseInt(Breakfast),
+      Lunch: parseInt(Lunch),
+      Snack: parseInt(Snack),
+      Dinner: parseInt(Dinner),
+      Comments: Comments,
         },
       },
 
@@ -34,24 +48,32 @@ export default function CreateEntry(props) {
         },
       }
     );//to make the call again.
-    props.invokeFetch(!props.fetchEntries)
+    props.updateFetchEntries(!props.fetchEntries)
+    updateDate('')
     updateBreakfast('')
-    // console.log(response.data);
+    updateLunch('')
+    updateSnack('')
+    updateDinner('')
+    updateComments('')
+    // } catch (e) {
+      // console.log(`This is the: ${e}`)
+  // }
+    
   };
 
   return (
     <>
-      <div className="new-entry-headline">
+      <FadeDiv className="new-entry-headline">
         <h1>Let's Keep Track Of Your Calories</h1>
         <h3>
           Here you can start by inputing your daily calories from mornign until
           night, and track how many calories you consume a day.
         </h3>
-      </div>
+      </FadeDiv>
 
-      <div className="new-entry-div">
+      <EntryDiv className="new-entry-div">
         <form onSubmit={handleSubmit} className="new-entry-box">
-          <label htmlFor="date">Date</label>
+          <label htmlFor="date" >Date</label>
           <input
             name="date"
             type="date"
@@ -90,18 +112,19 @@ export default function CreateEntry(props) {
             onChange={(e) => updateDinner(e.target.value)}
             value={Dinner}
           ></input>
-          <label htmlFor="comment">Add Comments</label>
+          <label htmlFor="comments">Add Comments</label>
           <textarea
             name="comment"
             type="text"
             placeholder="Your Comment"
-            onChange={(e) => updateComment(e.target.value)}
-            value={Comment}
+            onChange={(e) => updateComments(e.target.value)}
+            value={Comments}
           />
-          <Link to="/entries"className="button-link"><button type="button">Track Them</button></Link>
+          <button type="submit">Track Them</button>
+          
         </form>
-        {/* <Link to="/entries"><button type="button">Track Them</button></Link> */}
-      </div>
+       
+      </EntryDiv>
     </>
   );
 }

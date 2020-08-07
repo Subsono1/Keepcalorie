@@ -1,39 +1,79 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-import { isCompositeComponent } from 'react-dom/test-utils'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Iframe from "react-iframe"
+import { Link } from "react-router-dom";
 
-export default function Resources() {
-  const [query, updateQuery] = useState('')
-  const BASE_URL = "https://trackapi.nutritionix.com/v2/search/instant?query="
+
+
+export default function Resources(props) {
+  
+  const [query, updateQuery] = useState("");
+  const [results, updateResults] = useState([])
+  const BASE_URL = "https://trackapi.nutritionix.com/v2/search/instant?query=";
 
   
-    const getCalories = async () => {
-      const response = await axios.get(`${BASE_URL}${query}`, {
-        headers: {
-          'x-app-id': 'dc1a6b13',
-          'x-app-key': '0597f141fdeb9775ba60311a5e35fbf5',
-          "Content-Type": "application/json" 
 
+  const getCalories = async () => {
+    const response = await axios.get(`${BASE_URL}${query}`, {
+      headers: {
+        "x-app-id": "dc1a6b13",
+        "x-app-key": "0597f141fdeb9775ba60311a5e35fbf5",
+        "Content-Type": "application/json",
+      },
+    });
+    updateResults(response.data.common)
+    console.log(response);
+  };
 
-        }
-      })
-      console.log(response.data)
-    }
-  
-
+ 
 
   return (
     <>
-    <div>
-
-      <input value={query} onChange={(e) => updateQuery(e.target.value)}></input>
-      <button onClick={getCalories}>Click me</button>
-      
-    </div>
       <div>
-        {/* <h1 >{value.food_name}</h1> */}
+        <input
+          value={query}
+          onChange={(e) => updateQuery(e.target.value)}
+        ></input>
+        <button type="submit" onClick={getCalories}>
+          Click me
+        </button>
+        <div>
+          {results.map((item) => 
+          //   <div>
 
+          // <h1>{item.food_name}</h1>
+            
+          //     <img src={item.photo}> </img>
+          //     </div>
+            <Link to={`/food/${item.food_name}`}>
+              <div>
+                {/* <img src={item.photo.thumb} /> */}
+                <p>{item.serving_unit}</p>
+                </div>
+              
+              </Link>
+              
+              
+              
+              
+              
+            
+            
+
+          )}
+        </div>
       </div>
-      </>
-  )
+      <div className="calculator">
+        
+        
+        <Iframe src="https://www.mealpro.net/calorie/?color=435363" ></Iframe>
+        
+      </div>
+    
+
+      
+        
+     </>
+    
+  );
 }

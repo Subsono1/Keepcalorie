@@ -1,0 +1,9 @@
+.calculator, Iframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 80vh;
+  margin: 0 auto;
+
+}

@@ -7,7 +7,7 @@
 
 .new-entry-div {
   
-width: 500px;
+width: 400px;
 
 margin: 0 auto;
   
@@ -22,18 +22,20 @@ margin: 0 auto;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background-color: green;
+  background-color: rgb(223, 128, 65);
   
 }
 
  input, textarea {
   border-radius: 8px;
-  width: 400px;
+  width: 350px;
   height: 45px;
   text-align: center;
   
 }
 label {
+  font-family: 'Karla', sans-serif;
+  color:rgb(6, 24, 126);
   padding: 10px;
   font-size: 20px;
 }
@@ -42,10 +44,11 @@ textarea {
   height: 65px;
 }
 :placeholder-shown {
+  font-family: 'Karla', sans-serif;
   text-align: center;
   font-size: 20px;
 }
-button, .button-link {
+button {
 display: flex;
 justify-content: center;
 align-items: center;
@@ -60,11 +63,25 @@ border-radius: 8px;
   
   background:green;
 }
+.button-link:hover, 
+.button-link:active {
+  background: none;
+}
+
 
 
 
 
 @media screen and (min-width: 700px) {
+  .new-entry-headline {
+   
+    font-size: 25px;
+     width: 400px;
+    height: 400px;
+    padding: 70px;   
+
+  }
+
   input, textarea {
     border-radius: 8px;
     width: 600px;

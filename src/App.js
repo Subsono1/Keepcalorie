@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Router } from "react-router-dom";
 import axios from "axios";
 import Nav from "./components/Nav"
+import Start from './components/Start'
 import CreateEntry from "./components/CreateEntry"
 import Entries from './components/Entries'
 import Resources from "./components/Resources"
 import "./CreateEntry.css"
 import './List.css'
+import "./Resources.css"
 
 import "./App.css";
 
 function App() {
   const [entries, updateEntries] = useState([])
-  const [fetchEntries, invokeFetch] = useState (false)
+  const [fetchEntries, updateFetchEntries] = useState (false)
   const BASE_URL =
     "https://api.airtable.com/v0/appbIJiGm110d5tbK/Table%201";
 
@@ -35,14 +37,21 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/">
-          <CreateEntry />
+          <Start />
+        </Route>
+        <Route exact path="/form">
+          <CreateEntry
+           fetchEntries={fetchEntries}
+           updateFetchEntries={updateFetchEntries}/>
 
         </Route>
         <Route path="/entries">
           <Entries
             calorieEntries={entries}
             fetchEntries={fetchEntries}
-            invokeFetch={invokeFetch}/>
+           updateFetchEntries={updateFetchEntries}
+            
+            />
         </Route>
 
         <Route path="/resources">
