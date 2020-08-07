@@ -6,6 +6,7 @@ import Start from './components/Start'
 import CreateEntry from "./components/CreateEntry"
 import Entries from './components/Entries'
 import Resources from "./components/Resources"
+import Footer from './components/Footer'
 import "./CreateEntry.css"
 import './List.css'
 import "./Resources.css"
@@ -57,9 +58,11 @@ function App() {
         <Route path="/resources">
           <Resources />
         </Route>
+        
 
 
       </Switch>
+      <Footer />
 
 
 

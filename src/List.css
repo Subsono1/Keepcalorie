@@ -1,12 +1,14 @@
 body {
   text-align: center;
+/* background: url("https://images.unsplash.com/photo-1585183605002-176ea726d985?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80") no-repeat;
+background-size: cover; */
+background-color: orange;
 }
 
 
 .list {
   display: inline-grid;
   width: 400px;
-  ;
   padding: 20px;
   
   
@@ -19,17 +21,28 @@ body {
 .track-calories {
   text-align: center;
 }
+.daily-calories {
+  color: rgb(7, 7, 139);
+}
 
 .entries {
-  background: rgb(104, 89, 110);
-  color: white;
-  border: 1px solid green;
+  font-family: 'Quicksand', sans-serif;
+  background: #4363ee;
+  opacity: .9;
+  color: rgb(217, 236, 173);
+ 
   padding: 20px;
   text-align: left;
   border-radius: 20px;
   font-size: 14px;
   
 }
- body {
-   background-color: rgb(232, 237, 243);
- }
+
+.total {
+color: rgb(38, 64, 65);
+}
+.delete {
+  color: Black;
+}
+
+ 

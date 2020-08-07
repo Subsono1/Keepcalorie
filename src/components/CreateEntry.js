@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useHistory } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
 import { fadeInLeft, zoomIn } from 'react-animations'
-import { Link } from "react-router-dom";
+import Button from '@material-ui/core/Button';
+
+
 
 const BASE_URL = "https://api.airtable.com/v0/appbIJiGm110d5tbK/Table%201";
 
@@ -15,12 +18,15 @@ const EntryDiv = styled.section`
 animation:2s ${zoomInAnimation}`
 
 export default function CreateEntry(props) {
+
   const [Date, updateDate] = useState("");
   const [Breakfast, updateBreakfast] = useState("");
   const [Lunch, updateLunch] = useState("");
   const [Snack, updateSnack] = useState("");
   const [Dinner, updateDinner] = useState("");
   const [Comments, updateComments] = useState("");
+  
+  
 
 
 
@@ -59,13 +65,23 @@ export default function CreateEntry(props) {
       // console.log(`This is the: ${e}`)
   // }
     
+  
+    
+    
   };
+  const history = useHistory()
+  function handleChange() {
+   history.push('/entries')
+  }
+
+ 
+ 
 
   return (
     <>
       <FadeDiv className="new-entry-headline">
-        <h1>Let's Keep Track Of Your Calories</h1>
-        <h3>
+        <h1 className="headline-text">Let's Keep Track Of Your Calories</h1>
+        <h3 className="headline-text">
           Here you can start by inputing your daily calories from mornign until
           night, and track how many calories you consume a day.
         </h3>
@@ -120,7 +136,12 @@ export default function CreateEntry(props) {
             onChange={(e) => updateComments(e.target.value)}
             value={Comments}
           />
-          <button type="submit">Track Them</button>
+          {/* <button type="submit">Track Them</button> */}
+          <Button type="submit" onSubmit={handleChange} variant="contained" className="button" size="medium" color="primary" >
+            Submit
+        </Button>
+          
+          
           
         </form>
        

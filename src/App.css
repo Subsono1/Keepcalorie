@@ -2,7 +2,7 @@ header {
   width: 100vw;
   margin: 0;
   padding: 0;
-  background-color: rgb(97, 122, 236);
+  background-color: rgb(45, 195, 206);
 }
 nav {
   width: 100vw;
@@ -12,41 +12,57 @@ nav {
   
 
 }
-.brand{
-  margin-right: auto;
-  background: rgb(81, 192, 61);
-  
-  
-}
 
-a {
+
+.link, .brand {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 20px;
+  font-weight: bold;
   margin: 20px 10px;
   padding: 10px;
   text-decoration: none;
-  color: rgb(12, 10, 8);
+  color: rgb(243, 248, 229);
   cursor: pointer;
-  background-color: rgb(81, 192, 61);
+  background-color: rgb(13, 93, 168);
   border-radius: 10px;
   
 }
-a:hover,
-a:active {
-  background: rgb(255, 255 , 255);
-  color: black;
+
+.brand {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  margin-right: auto;
+  background: rgb(200, 89, 14);
+  box-shadow: 10px 5px 4px  rgb(233, 212, 212);
 }
 
+.link:hover,
+.link:active {
+  color: rgb(34, 37, 37);
+  background: azure;
+
+  
+}
+
+.start-div {
+  background: url("https://images.unsplash.com/photo-1444459094717-a39f1e3e0903?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80") no-repeat center fixed;
+  background-size: cover ;
+  height: 95vh;
+}
 .start {
-  display: flex;
+  /* display: flex;
   justify-content: center; 
   align-items: center;
-  flex-direction: row;
+  flex-direction: row; */
   margin-top: 500px;
   text-decoration: none;
   border-radius: 50%;
   text-align: center;
   height: 200px;
   width: 200px;
+  
   margin: 0 auto;
+  margin-top: 400px;
   background: yellowgreen;
   position: relative;
 
@@ -57,6 +73,20 @@ a:active {
 
 .new-entry-headline {
   color: gray;
+}
+
+footer {
+  background: white;
+  list-style: none;
+}
+li {
+  text-decoration: none;
+  list-style: none;
+}
+.footer-link {
+  list-style: none;
+  width: 100px;
+  height: 100px;
 }
 
 @media screen and (min-width: 700px) {

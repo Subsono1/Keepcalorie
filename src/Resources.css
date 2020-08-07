@@ -2,8 +2,57 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50vw;
-  height: 80vh;
+  width: 100vw;
+  height: 100vh;
   margin: 0 auto;
+  margin-top: 60px;
 
 }
+.main-nut-div {
+  display: inline-block;
+ justify-content: center;
+ align-items: center;
+}
+.nutrition {
+  
+  display: grid;
+  grid-template-columns:  200px 200px 200px ;
+  /* width: 300px; */
+  justify-items: center;
+  cursor: pointer;
+ 
+ 
+  
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+
+}
+.info {
+  font-size: 14px;
+  font-family: 'Quicksand', sans-serif;
+}
+.results {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(243, 248, 229);
+  cursor: pointer;
+  background-color: rgb(13, 93, 168);
+  border-radius: 10px;
+}
+
+
+@media screen and (min-width: 700px) {
+
+  .calculator, Iframe {
+    width: 80vw;
+  }
+  
+}
+

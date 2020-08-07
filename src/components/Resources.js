@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Iframe from "react-iframe"
+import Iframe from "react-iframe";
 import { Link } from "react-router-dom";
 
-
-
 export default function Resources(props) {
-  
   const [query, updateQuery] = useState("");
-  const [results, updateResults] = useState([])
+  const [results, updateResults] = useState([]);
   const BASE_URL = "https://trackapi.nutritionix.com/v2/search/instant?query=";
-
-  
 
   const getCalories = async () => {
     const response = await axios.get(`${BASE_URL}${query}`, {
@@ -21,15 +16,13 @@ export default function Resources(props) {
         "Content-Type": "application/json",
       },
     });
-    updateResults(response.data.common)
+    updateResults(response.data.common);
     console.log(response);
   };
 
- 
-
   return (
     <>
-      <div>
+      <div className="main-nut-div">
         <input
           value={query}
           onChange={(e) => updateQuery(e.target.value)}
@@ -37,43 +30,20 @@ export default function Resources(props) {
         <button type="submit" onClick={getCalories}>
           Click me
         </button>
-        <div>
-          {results.map((item) => 
-          //   <div>
-
-          // <h1>{item.food_name}</h1>
-            
-          //     <img src={item.photo}> </img>
-          //     </div>
-            <Link to={`/food/${item.food_name}`}>
+        <div className="nutrition">
+          {results.map((item) => (
+            <Link className="results" to={`/food/${item.food_name}`}>
               <div>
-                {/* <img src={item.photo.thumb} /> */}
-                <p>{item.serving_unit}</p>
-                </div>
-              
-              </Link>
-              
-              
-              
-              
-              
-            
-            
-
-          )}
+                <img className="image"src={item.photo.thumb} />
+                <p className="info">{item.serving_unit}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
       <div className="calculator">
-        
-        
-        <Iframe src="https://www.mealpro.net/calorie/?color=435363" ></Iframe>
-        
+        <Iframe src="https://www.mealpro.net/calorie/?color=435363"></Iframe>
       </div>
-    
-
-      
-        
-     </>
-    
+    </>
   );
 }
