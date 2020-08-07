@@ -52,8 +52,7 @@
   margin: 0, auto;
 }
 button.search  {
-  background-color: red;
-  /* background-color: rgb(14, 65, 233); */
+  background: rgb(37, 159, 240); 
   color: white ;
   font-size: 20px;
   font-weight: bold;
@@ -61,15 +60,15 @@ button.search  {
   height: 60px;
   border-radius: 8px;
   margin-bottom: 3px;
-  display: flex;
+  display: flex; 
   justify-content: center;
   align-items: center;
-  margin: 0, auto;
+  margin: 0 auto;
   margin-left: 240px;
   cursor: pointer;
   border: 5px solid rgb(37, 159, 240);;
   outline: none;
-  /* background: rgb(37, 159, 240); */
+  
 
 }
 
