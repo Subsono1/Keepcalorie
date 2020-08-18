@@ -69,7 +69,7 @@ export default function CreateEntry(props) {
       <FadeDiv className="new-entry-headline">
         <h1 className="headline-text">Let's Keep Track Of Your Calories</h1>
         <h3 className="headline-text">
-          Welcome, weather you want to loose wight or simply want to know you
+          Welcome, weather you want to loose weight or simply want to know you
           daily calories. This is the place. Please start by filling out the
           form below and let's keep track of your daily calories.
         </h3>
