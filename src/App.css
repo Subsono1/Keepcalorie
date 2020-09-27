@@ -5,6 +5,7 @@ header {
   background: rgb(37, 159, 240);
 }
 nav {
+  display: flex;
   width: 100vw;
   margin: 0;
   padding: 0;
