@@ -6,9 +6,8 @@ header {
 }
 nav {
   width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
 }
 
 .link,
@@ -83,6 +82,8 @@ footer {
   margin-top: 50px;
   padding-top: 30px;
   padding-bottom: 3px;
+  bottom: 0;
+  left: 0;
   position: fixed;
 
 }
